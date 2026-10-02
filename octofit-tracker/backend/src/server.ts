@@ -11,6 +11,7 @@ import { Workout } from './models/Workout.js';
 
 dotenv.config();
 
+const test = "";
 const app = express();
 const PORT = Number(process.env.PORT || 8000);
 const apiUrl = process.env.CODESPACE_NAME
