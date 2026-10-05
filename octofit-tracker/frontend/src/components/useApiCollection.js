@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
-export default function useApiCollection(resource) {
+export default function useApiCollection(endpoint) {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -13,7 +13,7 @@ export default function useApiCollection(resource) {
       setLoading(true)
       setError('')
       try {
-        setItems(await fetchCollection(resource, controller.signal))
+        setItems(await fetchCollection(endpoint, controller.signal))
       } catch (requestError) {
         if (requestError.name !== 'AbortError') {
           setError(requestError.message || 'Unable to load data.')
@@ -25,7 +25,7 @@ export default function useApiCollection(resource) {
 
     loadItems()
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint])
 
   return { items, loading, error }
 }

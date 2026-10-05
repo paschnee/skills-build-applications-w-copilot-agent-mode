@@ -2,7 +2,7 @@ import CollectionPage from './CollectionPage.jsx'
 import useApiCollection from './useApiCollection.js'
 
 export default function Workouts() {
-  const state = useApiCollection('workouts')
+  const state = useApiCollection('/api/workouts/')
 
   return (
     <CollectionPage title="Workouts" {...state}>

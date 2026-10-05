@@ -18,8 +18,8 @@ function extractItems(payload) {
   return []
 }
 
-export async function fetchCollection(resource, signal) {
-  const response = await fetch(`${API_BASE_URL}/api/${resource}/`, { signal })
+export async function fetchCollection(endpoint, signal) {
+  const response = await fetch(`${API_BASE_URL}${endpoint}`, { signal })
   if (!response.ok) {
     throw new Error(`Request failed (${response.status})`)
   }

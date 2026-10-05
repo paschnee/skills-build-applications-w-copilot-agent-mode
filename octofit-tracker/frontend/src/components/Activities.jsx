@@ -2,7 +2,7 @@ import CollectionPage from './CollectionPage.jsx'
 import useApiCollection from './useApiCollection.js'
 
 export default function Activities() {
-  const state = useApiCollection('activities')
+  const state = useApiCollection('/api/activities/')
 
   return (
     <CollectionPage title="Activities" {...state}>

@@ -2,7 +2,7 @@ import CollectionPage from './CollectionPage.jsx'
 import useApiCollection from './useApiCollection.js'
 
 export default function Leaderboard() {
-  const state = useApiCollection('leaderboard')
+  const state = useApiCollection('/api/leaderboard/')
 
   return (
     <CollectionPage title="Leaderboard" {...state}>

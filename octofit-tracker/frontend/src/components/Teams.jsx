@@ -2,7 +2,7 @@ import CollectionPage from './CollectionPage.jsx'
 import useApiCollection from './useApiCollection.js'
 
 export default function Teams() {
-  const state = useApiCollection('teams')
+  const state = useApiCollection('/api/teams/')
 
   return (
     <CollectionPage title="Teams" {...state}>
